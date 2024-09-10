@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta 검색 후 정리 -->
+<meta charset="UTF-8">
+<meta name="Generator" content="eclipse ide">
+<meta name="Author" content="hong">
+<meta name="Keywords" content="">
+<meta name="Description" content="html 기본 구조 설명 예제">
+<title>html 기본 구조 설명</title>
+<!-- 제목 부분 -->
+<style>
+/* css 주석처리 */
+</style>
+<script>
+	/* js 주석처리 */
+</script>
+
+</head>
+<body>
+	<h3>html 기본 구조</h3>
+	<!-- 
+		[ html 기본 구조 ]
+		1. <!DOCTYPE html> html5 문법을 따른다. 선언문 앞에는 ! : <!>
+		2. <html> : html 문서의 루트(root) 엘리먼트(Element == 요소)
+						html 문서의 시작~끝
+						모든 요소의 최상위 부모 요소(루트 엘리먼트)
+						
+		3. 자식 요소 1) <head> 자식요소
+							html 문서에 대한 "메타 정보"가 포함되어 있다.
+							필수 요소는 아니다.
+							<title> 브러우저의 제목 표시줄 또는 페이지 탭 표시
+										문서의 제목을 지정하는 태그
+							<meta charset="UTF-8">
+										문자셋 = 인코딩
+							
+					   2) <body> 자식요소
+					   		필수 요소이다.
+					   		화면에 표시되는 모든 내용(content)에 대한 (부모) 컨테이너 역할
+					   		본문 내용 (제목, 단락, 이미지, 하이퍼링크, 표, 목록 등등)
+	
+	 -->
+
+	<!-- html 주석처리
+			ctrl + shift + / -->
+
+	<!--
+	*** 요소(Element) = 시작태그(ol) + 내용(content) + 닫기(종료)태그(/ol)
+	참고사항) 내용이 없는 태그를 빈요소라고 하고,
+				빈요소는 종료태그가 없다.
+	-->
+	
+	<!-- 공백, 성 탭, 이름 엔터(개행) -->
+	<!-- 브라우저가 스페이스 한칸으로 작업 -->
+	1.&nbsp;&nbsp;&nbsp;&#160;&nbsp;이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;시훈<br>
+	2. 최	사랑<br> <!-- <br> : 개행 - 빈요소라 닫기 태그 안씀. 따라서 </br> : x -->
+	3. 김	준석<br>
+	4. &copy;김	선우<br> <!-- &copy; : 회사명 -->
+	<br>
+	&lt;html&gt; 태그는 루트엘리먼트이다.<br> <!-- <> : 표시 -->
+	
+	<!--
+	* 배치 작업이 중요하다.
+	
+	[html entity]
+	- 예약된 문자
+	- * &엔터티이름; 또는 &#엔터티숫자(16진수); : 외우기 힘들어서 잘안씀
+	예) 공백	&non-breaking space;
+		줄여서	&nbsp; : 공백 한 칸
+		
+		< : &lt;				> : &gt;
+		
+		xhtml = html4 + xml1.0					<br></br> == <br />
+		html4.01
+		html5
+		
+	-->
+	
+</body>
+</html>
