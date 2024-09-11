@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+
+<style>
+	img{
+		width: 100px;
+	}
+</style>
+
+</head>
+<body>
+	
+	<!-- 
+	다른 서버의 이미지를 사용할 수 있다.
+	<img src="https://s.pstatic.net/shopping.phinf/20240827_17/9f11dd10-44f5-4351-947f-7e06e61a9f02.jpg?type=f294_378" width="98" height="126" alt="재고 정리를 시작합니다">
+	 -->
+	
+	<!-- 이미지를 링크태그에 사용 -->
+	<a href="javascript:disCellphone();">
+		<img src="../../images/cellphone.jpg" alt="">
+	</a>
+	
+	<!-- script : 어디다 줘도 상관없다. -->
+	<script>
+		function disCellphone(){
+			location.href="../../images/cellphone.jpg";
+		}
+	</script>
+	
+</body>
+</html>

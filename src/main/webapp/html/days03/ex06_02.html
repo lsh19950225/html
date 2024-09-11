@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	span{
+	color: red;
+	background-color: yellow;
+	border: solid 1px gray;
+	width: 300px; /* 적용 안된다. */
+	}
+</style>
+
+</head>
+<body>
+
+<!-- 
+	[span] 태그
+		ㄴ 컨테이너(용기) : 다른 태그를 담기 위한 용도 / 자주 쓴다.
+		ㄴ 인라인 모드
+ -->
+<span id="team1">
+	1조 : <br>
+	<span id="s01">이시훈</span><span>김준석</span>
+	<span>최사랑</span>
+	<span>김선우</span>
+</span>
+<br>
+<!-- <button onclick="spanHide();">숨기기</button> -->
+<button id="btnHide">숨기기</button> <!-- jquery 밑 -->
+<button id="btnShow" onclick="spanShow();">보이기</button>
+
+<!-- ex06과 똑같은 코딩 : jquery -->
+<script>
+$("#btnShow").hide();
+
+function spanShow() {
+	$("#team1").show();
+}
+
+// jquery action method로 click 이벤트 처리
+// $("#btnHide").hide(); // 숨기기 버튼 자기 자신을 숨긴다.
+$("#btnHide").click(function() {
+	// 이름 없는 함수 : 익명 함수
+	$("#team1").hide();
+	$("#btnShow").show();
+	// $("#btnHide").hide();
+	$(this).hide(); // 위와 동일하다.
+});
+
+/* function spanHide() {
+	$("#team1").hide();
+} */
+</script>
+
+</body>
+</html>

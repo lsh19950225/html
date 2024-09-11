@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<style>
+	table{
+		width: 100%;
+		border-collapse: collapse;
+	}
+	th, td{
+		padding: 3px;
+		text-align: left;
+		/* border-bottom: solid 1px #ddd; 실선 */
+		border-bottom: dotted 5px #ddd; /* 점선 */
+	}
+	
+	/* 첫 번째 tr은 제외한 tr 태그에 스타일 지정 - 마우스 올릴 때 */
+	/* :not(제외하고자하는 선택자 tr 중에 첫번째 tr은 제외한다.) */
+	tr:hover {
+		border: solid 1px red;
+	}
+</style>
+
+</head>
+<body>
+
+<!-- table>tr>th*5 -->
+<!-- table>tr>th*5>lorem1 -->
+<!-- table>tr>th*5>lorem1^^tr*4>td*5>lorem1 -->
+<table>
+   <tr>
+      <th>Lorem.</th>
+      <th>Ea.</th>
+      <th>Fugit.</th>
+      <th>Nisi.</th>
+      <th>Quisquam.</th>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Commodi.</td>
+      <td>Assumenda.</td>
+      <td>Accusamus.</td>
+      <td>Delectus!</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Officiis?</td>
+      <td>Aperiam.</td>
+      <td>Omnis.</td>
+      <td>Molestias!</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Tempore!</td>
+      <td>Nobis.</td>
+      <td>Quas.</td>
+      <td>Sapiente.</td>
+   </tr>
+   <tr>
+      <td>Lorem.</td>
+      <td>Nihil!</td>
+      <td>Eaque.</td>
+      <td>Explicabo?</td>
+      <td>Veniam.</td>
+   </tr>
+</table>
+
+</body>
+</html>
