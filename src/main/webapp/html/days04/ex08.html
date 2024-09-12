@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- 뷰포트 ? 동일한 웹 페이지가 다양한 기기에 맞춰 크기, 배율을 제어하는 것 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	*{
+		box-sizing: border-box;
+	}
+	
+	body{
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	div#header{
+		background-color: #666;
+		color: white;
+		padding: 30px;
+		text-align: center;
+		font-size: 35px;
+	}
+	
+	div#footer{
+		background-color: #777;
+		color: white;
+		padding: 20px;
+		text-align: center;
+		font-size: 25px;
+	}
+	
+	div#nav{
+		width: 30%;
+		background-color: #ccc;
+		height: 500px;
+		padding: 20px;
+		float: left;
+	}
+	
+	div#article{
+		width: 70%;
+		background-color: #f1f1f1;
+		min-height: 500px; /* 최소 500 늘어나는건 괜찮다. 반대도 있다. */
+		padding: 20px;
+		float: left;
+	}
+	
+	div#section{
+		
+	}
+	
+	div#section::after{ /* after : 다음에 요소를 추가한다. */
+		content:"";
+		display: table; /* 화면이 테이블 형태로 나온다. */
+		clear: both; /* 따라가는걸 멈춰라 */
+	}
+</style>
+
+<style>
+/* css 미디어 쿼리 */
+@media screen and (max-width:800px){ /* screen : 화면에 출력될 때 */
+	div#nav, div#article{
+		width: 100%;
+		height: auto;
+	}
+}
+</style>
+
+</head>
+<body>
+<!-- 
+	반응형 웹 구현 : 모든 장치(PC,스마트폰,태블릿 등등)에서 웹 사이트의 자동 크기 조정
+	( css 미디어 쿼리 )
+ -->
+<div id="header">
+	<h2>Cites-시멘틱태그(sementic elements)</h2>
+</div>
+<div id="section">
+	<div id="nav">
+		<ul>
+			<li><a href="#">London</a></li>
+			<li><a href="#">Paris</a></li>
+			<li><a href="#">Seoul</a></li>
+		</ul>
+	</div>
+	<div id="article">
+		<h2>London</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam soluta quasi iusto similique sed aliquid omnis ipsam fugiat at illum praesentium maxime inventore eos repellat quod sint placeat quibusdam eius.</p>
+		<p>Enim pariatur cupiditate corrupti eligendi culpa a sed molestiae explicabo reprehenderit eveniet maiores modi id vitae laboriosam praesentium quod amet dolore aperiam ab porro neque nesciunt cum dolorum esse veritatis.</p>
+		<h2>Paris</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea minus tempore omnis nesciunt quisquam architecto voluptas aperiam earum illum eius dignissimos nostrum iste id ipsa sequi quaerat esse sit aliquam.</p>
+		<p>Nostrum laudantium quas ab ut quia quo ipsa esse. Maxime mollitia unde rerum impedit ratione amet labore error quasi pariatur laboriosam assumenda sunt suscipit magnam. Omnis soluta libero ducimus exercitationem?</p>
+		<h2>Seoul</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur autem et voluptatum ut deserunt tempore est eligendi repudiandae facilis voluptatibus quidem ad repellendus ullam eos odio tenetur iure nostrum praesentium.</p>
+		<p>Voluptas atque minima dolores nihil voluptatibus dolore sapiente maxime amet iste optio modi ipsa hic soluta facilis quod consequuntur ducimus cumque reiciendis sed nobis ut sunt veniam laborum aspernatur eaque!</p>
+	</div>
+</div>
+<div id="footer">
+	<h2>Footer</h2>
+</div>
+
+</body>
+</html>

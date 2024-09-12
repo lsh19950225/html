@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div.mycontainer{
+		border: 1px solid gray;
+		width: 100%;
+		/* overflow: hidden; */
+		overflow: auto;
+	}
+	
+	div.mycontainer div{
+		width: 33%;
+		float: left; /* 왼쪽부터 나열해라. */
+	}
+</style>
+</head>
+<body>
+
+<!-- 
+	[div]
+		ㄴ 컨테이너
+		ㄴ 배치(layout)
+		div
+			ㄴ div
+			ㄴ div
+			ㄴ div
+		div
+		div	div	div
+		- 3개의 div를 세로 3등분해서 배치
+		- float 속성 사용.
+			ㄴ 이미지 + 텍스트 정렬 (원래 목적)
+			ㄴ ul	li/li/li
+				메뉴
+			ㄴ contents 위치를 지정하기 위해서 사용 + 서로 겹쳐지기도 한다.
+ -->
+ <!-- .mycontainer -->
+ <div class="mycontainer">
+ 	<div style="background-color: #FFF4A3;">
+ 		<h2>London</h2>
+ 		<p>10</p>
+ 		<p>20</p>
+ 	</div>
+
+ 	<div style="background-color: #FFC0C7;">
+ 		<h2>Oslo</h2>
+ 		<p>101</p>
+ 		<p>201</p>
+ 	</div>
+
+ 	<div style="background-color: #D9EEE1;">
+ 		<h2>Rome</h2>
+ 		<p>1001</p>
+ 		<p>2001</p>
+ 	</div>
+ </div>
+ X
+ 
+</body>
+</html>

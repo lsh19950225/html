@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	div.mycontainer{
+		border: 1px solid gray;
+		display: grid;
+		
+		grid-template-columns: 33% 33% 33%;
+	}
+</style>
+</head>
+<body>
+
+<!-- 
+	[css grid(눈금) 레이아웃(배치) 모듈]
+		ㄴ 부동 또는 위치 지정을 하지 않고
+			유연한 반응형 배치 구조를 더 쉽게 하기 위해서 도입
+		ㄴ 행/열을 기반으로 배치한다.
+ -->
+
+ <div class="mycontainer">
+ 	<div style="background-color: #FFF4A3;">
+ 		<h2>London</h2> <!-- 때문에 공백 생긴다. -->
+ 		<p>10</p>
+ 		<p>20</p>
+ 	</div>
+ <div style="background-color: #FFC0C7;">
+ 		<h2>Oslo</h2>
+ 		<p>101</p>
+ 		<p>201</p>
+ 	</div>
+ <div style="background-color: #D9EEE1;">
+ 		<h2>Rome</h2>
+ 		<p>1001</p>
+ 		<p>2001</p>
+ 	</div>
+ </div>
+ X
+ 
+</body>
+</html>

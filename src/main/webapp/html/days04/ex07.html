@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<!-- 
+	emmet 설명
+ -->
+ 	<!-- div#page>div.logo+ul#navigation>li*5>a -->
+ 	<!-- emmet 구문은 [css 선택자]와 유사하다. -->
+ 	<!-- ctrl + e -->
+ 	<pre></pre>
+	
+	<!-- 중첩 연산자 : > -->
+	<!-- div>ul>li*3 -->
+	
+	<!-- 형제 레벨로 p 생성 : + 연산자 사용한다. -->
+	<!-- div+p+bq : 인용구, 줄여서 사용, 블락큐 -->
+	<!-- div+div>p>span+em -->
+	
+	<div></div>
+	<div>
+		<p><span></span><em></em></p>
+	</div>
+	
+	<!-- ^ : 상위 올라간다. -->
+	<div>
+		<p><span></span><em></em></p>
+	</div>
+	<div></div>
+	
+	<div></div>
+	<div>
+		<p><span></span><em></em></p>
+	</div>
+	<blockquote></blockquote>
+	
+	<!-- div+(div>p>span+em)+bq -->
+	
+	<!-- (ul>li*3)*2 () : 그룹화 -->
+	<!-- ul*2>li*3 위와 동일 -->
+	
+	<!-- div>(header>ul>li*2>a)+(footer>p) -->
+	
+	<!-- (div>dl>(dt+dd)*3)+(footer>p) -->
+	
+	<!-- 속성 연산자 -->
+	<div id="demo">
+	</div>
+	
+	<!-- [속성명] -->
+	<!-- div[id] -->
+	
+	<!-- div[id="demo"] -->
+	<!-- div#demo -->
+	<!-- #demo div로 만들어진다. -->
+	
+	<!-- .box -->
+	
+	<!-- #demo.box -->
+	
+	<!-- #header+.page+#footer.class1.class2.class3 -->
+	
+	<!-- td[colspan=3][title="hello World"] -->
+	<!-- td[colspan=3 title="hello World"] -->
+	
+	<!-- ul>li*5>{item$} -->
+	
+	<!-- ul>li.item$$*5>{item$$$} / $$ : 01, $$$ : 001 -->
+	
+	<!-- ul>li*5>{item$@-} / $@- : 54321 -->
+	
+	<!-- ul>li*5>{item$@11} / @숫자값부터 시작 -->
+	
+	<!-- {텍스트} -->
+	
+	<!-- a[href]>{텍스트} -->
+	<!-- a{텍스트} -->
+	
+	<!-- p>{Click}+(a>{here})+{to continue} -->
+	<!-- <p>Click<a href="">here</a>to continue</p> -->
+	
+</body>
+</html>

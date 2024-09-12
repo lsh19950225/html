@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+	/* css는 단위를 무조건 줘야되지만, 0일때는 안줘도된다. */
+	html, body{
+		margin: 0;
+		padding: 0;
+	}
+	
+	/* 
+	ul 태그 : 부모의 100% 블럭모드
+	li 태그 : 블럭모드
+	a 태그 : 인라인모드
+	 */
+	ul{
+		/* border: solid 1px blue; 약식 : 밑을 줄인거다. */
+		/* border-style: solid;
+		border-width: 1px;
+		border-color: blue; */
+		
+		/* 배경색 */
+		background-color: #333;
+		
+		/* style type : 안보이게한다. */
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		
+		/* 넘친부분을 보이게한다. */
+		overflow: hidden;
+	}
+	
+	/* 
+		ul 태그 중에 id가 main인 태그 안에 li 태그
+		id는 중복되지않아 생략 가능하다. : #main li
+	 */
+	ul#main li{
+		/* 이미지 플로팅 float */
+		float: left;
+	}
+	
+	ul#main li a{
+		color: white;
+		text-decoration: none;
+		/* border: solid 1px red; */
+		padding: 16px;
+		
+		/* inline 모드 -> block 모드 변경 */
+		display: block;
+	}
+	
+	/* 첫번째 li 태그를 나타낸다. / 수식으로도 나타낼 수 있다. */
+	ul#main li:nth-child(1){
+		background-color: red;
+	}
+	
+	/* 마지막을 찾아온다. first도 있다. */
+	ul#main li:last-child{
+		/* 오른쪽으로 정렬 */
+		float: right;
+	}
+	
+	/* 활성화된 메뉴는 class = active */
+	ul#main li a.active{
+		background-color: #04AA6D;
+		color: white;
+	}
+	
+	/* css 선택자 */
+	/* :not(선택자) : 제외한다. */
+	ul#main li a:hover:not(.active){
+		color: orange;
+		background-color: #111;
+	}
+	
+</style>
+</head>
+<body>
+
+	<!-- ul#main>li*4>a -->
+	<ul id="main">
+		<li><a href="#">Home</a></li>
+		<li><a href="#" class="active">News</a></li>
+		<li><a href="#">Contact</a></li>
+		<li><a href="#">About</a></li>
+	</ul>
+
+</body>
+</html>
