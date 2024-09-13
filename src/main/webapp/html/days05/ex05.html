@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body onload="window_init();">
+
+<!-- 
+	html 양식(Form)
+		ㄴ 폼(양식)은 사용자가 입력 수집하는 데 사용되는 요소들
+		ㄴ 서버로 전송( 서브밋 submit )
+ -->
+ 	<!-- get : 보내기 / post : 택배로 보내기 -->
+	<form action="ex05_ok.jsp" method="get">
+		<fieldset>
+			<legend>로그인</legend>
+			<!-- 한글 아이디 클릭해도 동기화된다. -->
+			<label for="id">아이디</label>
+			<!-- id x / name 속성이여야 연결이 가능하다. -->
+			<!-- autofocus : 자동적으로 속성을 잡아준다. / 속성명==속성값이 같을 경우 생략 가능하다. -->
+			<input type="text" id="id" name="id" autofocus="autofocus" tabindex="1" placeholder="아이디 입력"> <!-- 입력하기 위한 태그 / 기본 : text, 삭제해도 text -->
+			<br>
+			<label for="passwd">비밀번호</label>
+			<!-- type : password 가 있다. -->
+			<!-- tabindex : tab이 번호 순서대로 간다. -->
+			<input type="password" id="passwd" name="passwd" tabindex="2" placeholder="8~15 대소특숫 비밀번호 입력">
+			<br>
+			<!-- value : 이름 바꾸기 -->
+			<input type="submit" tabindex="3" value="로그인">
+			<input type="reset" tabindex="4" onclick="funcReset();">
+			
+			<!-- 위와 동일 -->
+			<button type="button">일반버튼</button>
+			<button type="submit">제출버튼</button>
+			<button type="reset">초기화버튼</button>
+			<br>
+		</fieldset>
+	</form>
+	
+	<!-- 여러개 와도 상관없다. -->
+	<!-- action 값을 주지 않으면 서버에 가서 다시 요청하고 온다. -->
+	<form action="">
+		<!-- 선택할 수 있는 옵션 목록 지정 -->
+		<input list="browser" required="required">
+		<datalist id="browser">
+			<option value="IE">
+			<option value="Chrome">
+			<option value="Firefox">
+			<option value="Opera">
+		</datalist>
+		<br>
+		Email : <input type="email" placeholder="sample@sist.co.kr" required="required">
+		<br>
+		
+		<p>좋아하는 동물?</p>
+		<!-- checkbox : 선택을 여러개 할 때 사용한다. -->
+		<input type="checkbox" name="animals" value="dog" id="dog" checked="checked"><label for="dog">강아지</label>
+		<input type="checkbox" name="animals" value="cat" checked="checked"><label>고양이</label>
+		<input type="checkbox" name="animals" value="pig"><label>돼지</label>
+		<input type="checkbox" name="animals" value="lizard"><label>도마뱀</label>
+		
+		<p>가장 좋아하는 색깔?</p>
+		<!-- checked : 기본으로 체크가 되어있다. -->
+		<!-- radio : 하나만 선택 -->
+		<input type="radio" name="color" value="red" id="red" checked="checked"><label for="red">빨강</label>
+		<input type="radio" name="color" value="green"><label>초록</label>
+		<input type="radio" name="color" value="blue"><label>파랑</label>
+		
+		<!-- select : 중에 하나 선택 -->
+		<!-- size : n개가 보인다. -->
+		<!-- multiple : 여러개 선택 가능하다. -->
+		<!-- onchange : 옵션을 선택하면 일어나는 이벤트이다. -->
+		<p>부서를 선택?</p>
+		<select onchange="" id="deptno" name="deptno" size="4" multiple="multiple">
+			<option value="10">ACCOUTING</option>
+			<option value="20">RESEARCH</option>
+			<option value="30">SALES</option>
+			<option value="40">ACCOUTING2</option>
+		</select>
+		<br>
+		
+		<p>하고 싶은 말</p>
+		<!-- <input type="text"></input> : 하나만 말할 때 -->
+		
+		<!-- 입력 태그 : 정해진 만큼 여러개 쓸 수 있다. -->
+		<textarea rows="10" cols="30"></textarea>
+		
+		<input type="submit">
+	</form>
+	
+	
+	<script>
+		function window_init (){
+			// js method - focus(); : 포커스 잡아준다.
+			// document.querySelector("#id").focus();
+		}
+		
+		function funcReset (){
+			document.querySelector("#id").focus();
+		}
+	</script>
+
+</body>
+</html>

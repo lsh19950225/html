@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* 
+		class="team"
+			ㄴ 클래스명은 대소문자를 구분한다.
+		id=""
+			ㄴ 아이디명도 대소문자를 구분한다.
+			ㄴ 중간에 공백을 사용할 수 없다.
+			ㄴ 숫자로 시작할 수 없다.
+	 */
+.team1 {
+	background-color: yellow;
+}
+
+.team2 {
+	background-color: green;
+}
+
+li.teamleader {
+	color: red;
+}
+</style>
+</head>
+<body>
+
+	<div class="team1">
+		<ul>
+			<li class="teamleader">김준석</li>
+			<li>전재윤</li>
+			<li>박준용</li>
+			<li>송세호</li>
+			<li>이시훈</li>
+		</ul>
+	</div>
+	<div class="team2">
+		<ul>
+			<li class="teamleader">원충희</li>
+			<li>김선우</li>
+			<li>김재민</li>
+			<li>최사랑</li>
+			<li>김인경</li>
+		</ul>
+	</div>
+
+	<script>
+		// jquery 수정
+		// jquery method each()
+		$(".team2 ul li").each(
+				function(index, element) {
+					console.log(this);
+					console.log(index + ": " + $(this).text() + ":"
+							+ element.innerText);
+					// jquery method click 이벤트
+					// $(element)
+					
+					/* $(this).click(function (){
+						$(this).remove();
+						// console.log("click..");
+					});
+				}); */
+		
+					$(this).click(function (){
+						// console.log("click..");
+						// $(this).remove();
+						// $(".team2 ul li").remove();
+						/* 나중에 알려준다. - parent언틸 : 어디까지 사라지게한다. */
+						// $(this).parent().remove(); /* 부모를 제거한다. */
+						$(this).next().next().remove(); /* .next() : 다음 사람 제거한다. */
+					});
+				});
+
+		/* $(".team2 ul li").each( ( index, element ) => {
+			console.log(this); this : window 객체
+		console.log( index + " / " + $( this ).text() + " / " + element.innerText );
+		}); */
+	</script>
+
+</body>
+</html>
