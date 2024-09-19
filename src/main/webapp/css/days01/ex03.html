@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 내부적(internal) CSS 적용방법 -->
+<style>
+	#demo{ /* 100점 */
+		background-color: blue;
+	}
+	
+	.second{ /* 10점 */
+		/* 다 주면 좋지 않지만 다 주게되면 특이점순으로 간다. */
+		background-color: gray !important;
+	}
+	
+	p{ /* 1점 */
+		/* !important : 다 무시하고 이걸로 적용한다. */
+		background-color: red !important;
+	}
+</style>
+</head>
+<body>
+
+	<!-- 
+		[CSS 규칙 중 !important]
+		일반적인 것보다 더 중요성
+		!important 규칙을 적용하면 해당 요소의 특정 속성에 대한
+		이전 모든 지정된 스타일은 무시되고 새로 설정(정의)된다.
+	 -->
+
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p class="second">Lorem ipsum dolor sit amet.</p>
+	<p>Lorem ipsum dolor sit amet.</p>
+	<p id="demo">Lorem ipsum dolor sit amet.</p>
+
+</body>
+</html>

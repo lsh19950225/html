@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+	 #xx p#first .last{ /* 특이성 100점 + 1점 + 100점 + 10점 */
+	 
+	 }
+	 
+	 *{	/* 범용 선택자 0점 */
+	 
+	 }
+	 
+	 p#first{ /* 1점+100점=101점 */
+	 	color: green;
+	 }
+	 
+	 #first{ /* 100점 */
+	 	color: aqua;
+	 }
+	 
+	 p.last{ /* 1점+10점 = 11점 */
+	 	
+	 }
+	 
+	 .last{ /* 10점 */
+	 	background-color: yellow;
+	 }
+	 
+	 p{ /* 1점 */
+	 	color: red;
+	 	text-align: center;
+	 }
+	 
+	 p{ /* 1점 */ /* 파란색이 적용된다. / 똑같은 선택자라면 나중에 있는 코딩이 적용된다. */
+	 	color: blue;
+	 }

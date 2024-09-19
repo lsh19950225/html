@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	/* 배경 이미지가 가로/세로 반복 */
+	body{
+		/* background-color: red;
+		background-image: url("../images/img_tree.gif");
+		/* no-repeat : 반복하지말라 */
+		background-repeat: no-repeat;
+		/* 우측 상단에 이미지 배치된다. */
+		background-position: right top;
+		/* 배경 이미지 고정된다. /
+		background-attachment: fixed; */
+		
+		background: url("../images/img_tree.gif") no-repeat right top fixed;
+	}
+	
+	div#top{
+		border-width: 1px;
+		border-style: solid;
+		border-color: gray;
+		
+		width: 25px;
+		height: 25px;
+		
+		position: fixed; /* 위치 고정 */
+		right: 5px;
+		bottom: 5px;
+	}
+	
+	/* : 의사 클래스 */
+	div#top:hover{
+		background: black;
+		color: yellow;
+		font-weight: bold;
+		cursor: pointer;
+	}
+</style>
+</head>
+<body>
+
+	<div id="top">top</div>
+	<h3>css 배경이미지</h3>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+	Libero asperiores ea sit odit similique et molestiae culpa
+	quia officiis voluptatibus tempore id adipisci laboriosam
+	repudiandae nostrum. Culpa numquam earum enim.
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	<p>.</p>
+	
+	<script>
+		// js 변수 선언 키워드 : var, let, const
+		const btnTop = document.getElementById("top");
+		btnTop.onclick = function (){
+			// alert("확인");
+			// <body>요소
+			document.body.scrollTop = 0;
+			document.documentElement.scrollTop = 0;
+		}
+	</script>
+
+</body>
+</html>
