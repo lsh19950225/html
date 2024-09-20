@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	ul{
+		/* 로마자 */
+		list-style-type: lower-roman;
+		
+		/* 1. 목록 항목의 마커를 이미지로 지정한다. */
+		list-style-image: url("../images/sqpurple.gif");
+	}
+	
+	/* 2. 마커 위치 조정 */
+	ul.a{
+		/* 안에 찍힌다. */
+		list-style-position: inside;
+	}
+	
+	ul.b{
+		/* 밖에 찍힌다. */
+		list-style-position: outside;
+	}
+	
+	ul > li{
+		border: 1px solid black;
+	}
+	
+	/* ul, ol 의 기본 설정 제거 / 위는 기본 설정이 아니라 안사라진다. */
+	ul, ol{
+		list-style-type: none;
+	}
+</style>
+</head>
+<body>
+
+	<!-- 
+		[css 목록]
+	 -->
+	 
+	 <ul class="a">
+	 	<li>Lorem.</li>
+	 	<li>Deleniti.</li>
+	 	<li>Aliquam?</li>
+	 </ul>
+	 
+	 <ul class="b">
+	 	<li>Lorem.</li>
+	 	<li>Deleniti.</li>
+	 	<li>Aliquam?</li>
+	 </ul>
+	 
+	 <ol>
+	 	<li>Lorem.</li>
+	 	<li>Deleniti.</li>
+	 	<li>Aliquam?</li>
+	 </ol>
+	
+</body>
+</html>
