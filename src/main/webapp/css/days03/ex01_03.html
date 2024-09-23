@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	.box{
+		border: 1px solid red;
+		width: 100px;
+		height: 100px;
+		text-align: center;
+	}
+	
+	/* div:nth-child(2) {
+		background-color: green;
+	} */
+	
+	div:nth-of-type(1) {
+		background-color: blue;
+		/* 기본값 : static - 항상 페이지의 일반적인 흐름(인, 블)에 따라 위치가 지정된다. */
+		position: static;
+	}
+	
+	div:nth-of-type(2) {
+		background-color: yellow;
+		/* 
+		relative - 상대적인, 상대좌표
+									ㄴ 기준 : 왼쪽 위
+										 */
+		position: relative;
+		left: 10px;
+		top: 10px;
+	}
+	
+	div:nth-of-type(3) {
+		background-color: pink;
+		/* 
+			위치 고정 : 빈자리는 채워진다.
+		 */
+		position: fixed;
+		right: 10px;
+		bottom: 10px;
+	}
+	
+	div:nth-of-type(4) {
+		background-color: green;
+		/* 
+			절대 좌표 : 가장 가까운 위치의 조상을 기준 좌표
+			body를 주면 body를 기준으로 잡힌다.
+		 */
+		position: absolute;
+		left: 50px;
+		top: 25px;
+		
+		/* 겹치면 위로 올라오게 해준다. */
+		z-index: -1;
+	}
+</style>
+</head>
+<body>
+
+	
+	
+<script>
+	// [js] 반복문 사용해서 div 5개 동적 생성 + position 속성
+	// 
+	for (var i = 1; i <= 5; i++) {
+		const divElement = document.createElement("div");
+		// divElement.innerText = "Box - " + i;
+		divElement.innerText = `Box - ${i}`;
+		divElement.className = "box";
+		document.body.appendChild(divElement);
+	}
+</script>
+
+</body>
+</html>
