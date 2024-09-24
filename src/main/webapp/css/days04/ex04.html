@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	button{
+		background-color: red;
+		display: inline-block;
+		padding: 5px;
+		border: none;
+		color: white;
+		
+		cursor: pointer;
+	}
+	
+	/* button:hover{
+		background-color: pink;
+	} */
+</style>
+</head>
+<body>
+
+	<!-- 
+		[마우스 롤오버 효과]
+	 -->
+	 
+	 <button type="button">마우스 롤오버 효과</button>
+	 <button>마우스 롤오버 효과</button>
+	 <button>마우스 롤오버 효과</button>
+	 
+<script>
+	// js
+	// const btns = document.querySelectorAll("button");
+	// alert(btns.length);
+	
+	
+	/* btns == nodeList
+	btns.onmouseover = function(){
+		console.log("btn mouseover.");
+	};
+	
+	btns.onmouseout = function(){
+		console.log("btn mouseout.");
+	}; 
+	*/
+	
+	/*
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].onmouseover = function(){
+			// console.log("btn mouseover.");
+			// console.log(this); 이벤트가 발생한 버튼 요소
+			this.style.backgroundColor="blue"; 
+		};
+		
+		btns[i].onmouseout = function(){
+			// console.log("btn mouseout.");
+			// event : 내장된 객체
+			// srcElement : 이벤트를 받은 엘리먼트
+			event.srcElement.style.backgroundColor="red";
+		};
+	}
+	*/
+	
+	// jq 참고
+	$("button").
+		on("mouseover", function(){
+			$(this).css("backgroundColor", "blue"); 
+		});
+	
+	$("button").
+		on("mouseout", function(){
+			$(this).css("backgroundColor", "red");
+		});
+</script>
+
+</body>
+</html>

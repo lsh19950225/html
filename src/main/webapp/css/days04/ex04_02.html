@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	ul{
+		margin-left: 20px;
+		color: blue;
+	}
+	
+	li{
+		cursor: default;
+	}
+	
+	span{
+		color: red;
+	}
+</style>
+</head>
+<body>
+
+	<!-- jquery hover() method -->
+	
+	<ul>
+		<li>Lorem.</li>
+		<li>Voluptatibus.</li>
+		<li>Nisi.</li>
+		<li>Ipsum.</li>
+	</ul>
+
+<script>
+	$("ul li").hover(
+		// mouseover
+		function(){
+			$(this).append("<span>***</span>");
+		},
+		// mouseout
+		function(){
+			/* 자식 요소 : .children() /  : 마지막 요소 : .last() */
+			/* 자체 : remove / 자식 : empty */
+			// $(this).children().last().remove();
+			
+			/* 위와 동일 / find : 찾겠다. */
+			$(this).find("span").last().remove();
+		}
+	);
+</script>
+
+</body>
+</html>
