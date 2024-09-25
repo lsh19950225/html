@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+table {
+	width: 100%;
+	border-top: 5px solid black;
+}
+
+table, th, td {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+</style>
+</head>
+<body>
+	<div class="vote">
+		<h2>설문 작성</h2>
+		<form>
+			<table>
+				<tr>
+					<td style="text-align: center;">질문</td>
+					<td><input type="text" autofocus="autofocus" tabindex="1"
+						placeholder="질문"></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">시작일</td>
+					<td><input type="date" id="start" tabindex="2"></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">종료일</td>
+					<td><input type="date" id="end" tabindex="3"></td>
+				</tr>
+				<tr>
+					<td style="text-align: center;">항목수</td>
+					<td><input list="count" id="itemCount" required="required"
+						tabindex="4" onchange="generateItems()"> <datalist
+							id="count">
+							<option value="1개">
+							<option value="2개">
+							<option value="3개">
+							<option value="4개">
+							<option value="5개">
+						</datalist></td>
+				</tr>
+			</table>
+			<br>
+			<table id="voteTable" style="display: none;">
+				<!-- 동적으로 생성되는 항목 테이블 -->
+			</table>
+			<br>
+			<div class="button" style="text-align: right;">
+				<button type="submit">확인</button>
+				<button type="reset" onclick="resetForm()">취소</button>
+			</div>
+		</form>
+	</div>
+
+	<script>
+function generateItems() {
+    let itemCountText = document.getElementById('itemCount').value;  // 항목수 값
+    let itemCount = parseInt(itemCountText[0]);  // 숫자 추출
+    let voteTable = document.getElementById('voteTable');
+
+    // 항목 수가 선택되면 테이블을 보이게 함
+    voteTable.style.display = 'table';
+
+    // 기존 항목을 삭제
+    while (voteTable.rows.length > 0) {
+        voteTable.deleteRow(0);
+    }
+
+    // 새로운 항목 생성
+    for (let i = 1; i <= itemCount; i++) {
+        let row = voteTable.insertRow();
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+
+        if (i == 1) {
+            cell1.style.textAlign = 'center';
+            cell1.setAttribute('rowspan', itemCount);  // 첫 번째 항목에 rowspan 추가
+            cell1.innerHTML = '항목';
+        } else {
+            // 두 번째 이후의 항목들은 첫 번째 열에 빈 셀을 넣지 않음
+            cell1.style.display = 'none';  
+        }
+
+        cell2.innerHTML = `<label for="vote${i}">${i}: </label> <input type="text" id="vote${i}" name="vote${i}" tabindex="${4 + i}" placeholder="항목 ${i}">`;
+    }
+}
+
+function resetForm() {
+    // 초기화 시 항목도 숨기기
+    let voteTable = document.getElementById('voteTable');
+    voteTable.style.display = 'none';
+
+    // 선택한 항목 수 필드를 비워줌
+    document.getElementById('itemCount').value = '';
+
+    // 초기화 시 항목도 다시 1개로 리셋
+    setTimeout(() => {
+        generateItems();
+    }, 0);
+}
+</script>
+
+</body>
+</html>
