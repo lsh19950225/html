@@ -27,29 +27,19 @@
      
   </xmp>
   
-  <input type="text" id="txtContent" class="long" placeholder="content 입력"
-  autofocus="autofocus">
-  
-  <button class="add">실행(execute)</button>
-  
-  <div id="demo" class="code">결과 : </div>
+  <input type="range" id="a" min="0" max="100" value="0">
+  <div id="name">
+  		홍길동
+  </div>
   
   <script>
-  	const btnExec = document.querySelector("button.add");
-  	btnExec.addEventListener("click", function(){
-  		let txt = document.querySelector("#txtContent").value;
-  		const demo = document.querySelector("#demo");
-  		/* demo.innerText = `결과 : <span style='color: red'>${txt}</span>`; */
-  		/* demo.innerHTML = `결과 : <span style='color: red'><b>${txt}</b></span>`; */
-  		demo.innerHTML = `결과 : ${txt}`;
+  		const range = document.querySelector("#a");
+  		const name = document.querySelector("#name");
   		
-  		
-  		// document.querySelector("#txtContent").value="";
-  		// document.querySelector("#txtContent").focus();
-  		
-  		/* 포커스 잡히는데 다 스크롤 된다. */
-  		document.querySelector("#txtContent").select();
-  	});
+  		range.addEventListener("input", function() {
+  	        const b = range.value;
+  	        name.style.fontSize = `${b}`;
+  	    });
   </script>
   
 </div>

@@ -12,6 +12,14 @@
  span.material-symbols-outlined{
     vertical-align: text-bottom;
  }
+ 
+ #demo{
+ 	border: solid 1px gray;
+ 	width: 400px;
+ 	height: 100px;
+ 	
+ 	overflow: auto;
+ }
 </style>
 </head>
 <body>
@@ -27,29 +35,25 @@
      
   </xmp>
   
-  <input type="text" id="txtContent" class="long" placeholder="content 입력"
-  autofocus="autofocus">
+  <label class="label">이름 입력 : </label>
+  <input type="text" id="txtContent" class="short" autofocus="autofocus">
+  <br>
+  <button class="add">추가</button>
   
-  <button class="add">실행(execute)</button>
-  
-  <div id="demo" class="code">결과 : </div>
+  <div id="demo" class="code">
+  	
+  </div>
   
   <script>
-  	const btnExec = document.querySelector("button.add");
-  	btnExec.addEventListener("click", function(){
-  		let txt = document.querySelector("#txtContent").value;
-  		const demo = document.querySelector("#demo");
-  		/* demo.innerText = `결과 : <span style='color: red'>${txt}</span>`; */
-  		/* demo.innerHTML = `결과 : <span style='color: red'><b>${txt}</b></span>`; */
-  		demo.innerHTML = `결과 : ${txt}`;
-  		
-  		
-  		// document.querySelector("#txtContent").value="";
-  		// document.querySelector("#txtContent").focus();
-  		
-  		/* 포커스 잡히는데 다 스크롤 된다. */
-  		document.querySelector("#txtContent").select();
-  	});
+		const btnAdd = $("button.add");
+		btnAdd.on("click", function(){
+			const txt = $("#txtContent").val();
+			const demo = $("#demo");
+			/* demo.text(`${txt}`); */
+			demo.append(`${txt}<br>`);
+			
+			$("#txtContent").select();
+		})
   </script>
   
 </div>
