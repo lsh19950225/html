@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+	 라디오 버튼을 선택한 후 실행 버튼을 클릭하면
+  </xmp>
+  
+  <input type="radio" name="group" value="aaa">에이<br>
+  <input type="radio" name="group" value="bbb">비<br>
+  <input type="radio" name="group" value="ccc">시<br>
+  <input type="radio" name="group" value="ddd">디<br>
+  <input type="radio" name="group" value="eee">이<br>
+  <br>
+  <button>실행</button>
+  <p id="demo"></p>
+  
+</div>
+</body>
+
+<script>
+	document.querySelector("button").onclick = function(){
+		
+		// document.querySelectorAll("body>div>input[name=group]");
+		/* name 가져오기 */
+		const radioList = document.getElementsByName("group");
+		
+		let flag = true;
+		for (var i = 0; i < radioList.length; i++) {
+			
+			if(radioList[i].checked){
+				flag = false;
+				// value 속성을 demo에 출력
+				// document.querySelector("#demo").innerText = radioList[i].value;
+				/* nextSibling 형제에 문자열 등 모두에 다음을 찾고 노드로 바꾼다. / nodeValue : 노드 값 가져오기 */
+				document.querySelector("#demo").innerText = radioList[i].nextSibling.nodeValue;
+				break;
+			}
+		} // for
+		
+		if(flag) alert("선택하세요.");
+		
+	};
+</script>
+
+</html>
