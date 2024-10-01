@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="http://localhost/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"
+	href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+span.material-symbols-outlined {
+	vertical-align: text-bottom;
+}
+</style>
+</head>
+<body>
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">lsh</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> </xmp>
+
+		<table id="tblDept">
+			<thead>
+				<tr>
+					<th><input type="checkbox" class="all"> 모두 선택</th>
+					<th>Name</th>
+					<th>Loc</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="checkbox" id="ck1"></td>
+					<td>Quam.</td>
+					<td>Sapiente.</td>
+				</tr>
+				<tr>
+					<!-- data-이름="값" / 가져올때 : getAttribute("date-이름") -->
+					<!-- data-name : 숨기기 -->
+					<td><input type="checkbox" id="ck2" data-name='Consequatur!'></td>
+					<td>Consequatur!</td>
+					<td>Nisi.</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="ck3"></td>
+					<td>Tenetur!</td>
+					<td>Modi.</td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" id="ck4"></td>
+					<td>Earum.</td>
+					<td>Officiis.</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3" align="center">
+						<button id="ok">선택 확인</button>
+					</td>
+				</tr>
+			</tfoot>
+		</table>
+
+		<p id="demo"></p>
+
+	</div>
+	
+	<script>
+		let all = document.querySelector(".all[type=checkbox]");
+		let cks = document.querySelectorAll("input[id^='ck']");
+		// let ck1 = document.querySelector("#ck1");
+		// let ck2 = document.querySelector("#ck2");
+		// let ck3 = document.querySelector("#ck3");
+		// let ck4 = document.querySelector("#ck4");
+		let demo = document.querySelector("#demo");
+		let btnOk = document.querySelector("#ok");
+		
+		
+		
+		
+		all.onclick = function(){
+			
+			for (var i = 0; i < cks.length; i++) {
+				
+				cks[i].checked = this.checked;
+
+			}
+			
+			/* 내가 한거
+			for (var i = 0; i < cks.length; i++) {
+				
+				cks[i].onclick = function(){
+				
+					if( !this.checked ){
+						all.checked = false;
+					}else if( this.checked ){
+						all.checked = true;
+					} // if
+				
+				}
+			} // for
+			*/
+			
+		};
+		
+		// click 이벤트 처리 강사님이 한 것
+		for (var i = 0; i < cks.length; i++) {
+			cks[i].onclick = function(){
+				let isCksAllChecked = true;
+				for (var i = 0; i < cks.length; i++) {
+					isCksAllChecked = cks[i].checked;
+					if(!isCksAllChecked) break;
+				} // for
+				
+				all.checked = isCksAllChecked;
+			}
+		} // for
+		
+		
+		btnOk.onclick = function(){
+			let content = "<ul>";
+			for (var i = 0; i < cks.length; i++) {
+				const ckb = cks[i]
+				if(ckb.checked){
+					let name = ckb.parentElement.nextElementSibling.innerText;
+					content += `<li>${name}</li>`
+				} // if
+			} // for
+			content += "</ul>";
+			demo.innerHTML = content;
+		}
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+ 
+ #container{
+ 	display: flex;
+ 	width: 60%;
+ 	margin: 0 auto;
+ }
+ 
+ #container > div{
+ 	width: 33%;
+ }
+ 
+ #container > div > select{
+ 	width: 100%;
+ 	height: 200px;
+ }
+ 
+ button{
+ 	width: 100%;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <div id="container">
+  	<div>
+  		<select id="leftCmb" multiple="multiple">
+  			<option value="" selected="selected">이시훈</option>
+  			<option value="">김준석</option>
+  			<option value="" selected="selected">최사랑</option>
+  			<option value="" selected="selected">김선우</option>
+  			<option value="" selected="selected">박준용</option>
+  		</select>
+  	</div>
+	<div>
+	 <button>오</button> <!-- 왼쪽에 남겨두고 오른쪽 복사 -->
+	 <button>오오</button> <!-- 왼쪽에 없애고 오른쪽으로 -->
+	 <button>왼</button>
+	 <button>왼왼</button>
+	</div>
+	<div>
+		<select name="" id="rightCmb" multiple="multiple"></select>
+	</div>
+  </div>
+  
+</div>
+
+<script>
+	let btn1 = $("button:nth-of-type(1)");
+	let btn2 = $("button:nth-of-type(2)");
+	let btn3 = $("button:nth-of-type(3)");
+	let btn4 = $("button:nth-of-type(4)");
+	const rightCmb = $("#rightCmb");
+	
+	btn1.on("click", function(){
+		$("#leftCmb option:selected").each(function(index,element){
+			// rightCmb.append($(element).clone());
+			
+			// 위와 동일
+			$(element).clone().appendTo($("#rightCmb"));
+		});
+	});
+	
+	btn2.on("click", function(){
+		// jq selector - :checked :selected
+		// jq method - each()
+		$("#leftCmb option:selected").each(function(index,element){
+			// jq method - append() 마지막 자식으로 추가, prepend() 첫번째 자식으로 추가
+			// appendTo(), prependTo()
+			rightCmb.append($(element));
+		});
+	});
+</script>
+
+</body>
+</html>

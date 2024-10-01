@@ -51,39 +51,43 @@ span.material-symbols-outlined {
 
 	</div>
 	<script>
-	let a = document.querySelector("input:nth-of-type(1)");
-	let b = document.querySelector("input:nth-of-type(2)");
-	let c = document.querySelector("input:nth-of-type(3)");
-	// combobox == cmb
-	let opCmb = document.querySelector("#operator");
+	// input[type=text] == jquery selector :text
+	// let a = $(":text").first();
+	let b = $(":text").eq(1);
+	let c = $(":text").last();
+
+	let opCmb = $("#operator");
 	
-	a.onkeydown = function(){
-		if( !(event.keyCode >= 48 && event.keyCode <= 57
-				|| event.keyCode == 8
-				|| event.keyCode == 13
-				|| event.keyCode == 229) ){
+	let n1, n2;
+	
+	$(":text").first().on("keydown", function(event){
+		if( !(event.which >= 48 && event.which <= 57
+				|| event.which == 8
+				|| event.which == 13
+				|| event.which == 229) ){
 			alert("숫자만 입력하세요.");
 			
 			/* 이벤트 취소 */
 			event.returnValue = false;
 		}
 		
-		if(event.keyCode == 13)
+		if(event.which == 13)
+			n1 = $(this).val();
 			b.focus();
-	}
+	});
 	
-	b.onkeydown = function(){
-		if( !(event.keyCode >= 48 && event.keyCode <= 57
-				|| event.keyCode == 8
-				|| event.keyCode == 13
-				|| event.keyCode == 229) ){
+	b.on("keydown", function(event){
+		if( !(event.which >= 48 && event.which <= 57
+				|| event.which == 8
+				|| event.which == 13
+				|| event.which == 229) ){
 			alert("숫자만 입력하세요.");
 			
 			/* 이벤트 취소 */
 			event.returnValue = false;
 	}
 	
-		if(event.keyCode == 13){
+		if(event.which == 13){
 			/*
 			let result = parseInt(a.value) + Number(b.value);
 			c.value = result;
@@ -92,42 +96,55 @@ span.material-symbols-outlined {
 			*/
 			
 			// previousElementSibling : 앞에 있는 놈
-			this.previousElementSibling.focus();
+			n2 = $(this).val();
+			$(this).prev().focus();
 		}
-	}
+	});
 	
-	opCmb.onchange = function(){
+	opCmb.on("change", function(){
+		let op = $(this).val(); // + - *
+		
+		// eval() : 계산해주는 함수
+		let result = eval(n1 + op + n2); // "10" + "+" + "2" eval("10+2")
+		
+		c.val(result);
+		$(":text").first().select();
+	});
+	
+	/*
+	opCmb.on("change", function(){
 		let result;
 		
-		switch (this.value) {
+		switch ($(this).val()) {
 		case "+":
-			result = parseInt(a.value) + Number(b.value);
+			result = parseInt(a.val()) + Number(b.val());
 			break;
 		case "-":
-			result = parseInt(a.value) - Number(b.value);
+			result = parseInt(a.val()) - Number(b.val());
 			break;
 		case "*":
-			result = parseInt(a.value) * Number(b.value);
+			result = parseInt(a.val()) * Number(b.val());
 			break;
 		case "/":
-			result = parseInt(a.value) / Number(b.value);
+			result = parseInt(a.val()) / Number(b.val());
 			break;
 		case "%":
-			result = parseInt(a.value) % Number(b.value);
+			result = parseInt(a.val()) % Number(b.val());
 			break;
 		case "**":
-			result = parseInt(a.value) ** Number(b.value);
+			result = parseInt(a.val()) ** Number(b.val());
 			break;
 
 		default:
 			break;
 		}
 		
-		c.value = result;
+		c.val(result);
 		
 		a.select();
 		
-	}
+	});
+	*/
 	</script>
 </body>
 </html>

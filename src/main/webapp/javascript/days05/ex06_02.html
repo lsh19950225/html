@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     // js 문자열 -> 숫자 변환 함수
+  </xmp>
+</div>
+<script>
+	// 1. Number()
+	// 2. parseInt() / parseFloat()
+	// 3. eval()
+	
+	let n = "10";
+	/*
+	document.write(Number(n)+"<br>");
+	document.write(parseInt(n)+"<br>");
+	document.write(parseFloat(n)+"<br>");
+	*/
+	
+	/*
+	n = "   10   "; // n.trim() x
+	document.write(Number(n)+"<br>");
+	document.write(parseInt(n)+"<br>");
+	document.write(parseFloat(n)+"<br>");
+	*/
+	
+	/*
+	n = "10 20 30";
+	document.write(Number(n)+"<br>"); // NaN
+	document.write(parseInt(n)+"<br>"); // 10
+	document.write(parseFloat(n)+"<br>"); // 10
+	*/
+	
+	/*
+	n = "10.33";
+	document.write(Number(n)+"<br>"); // 10.33
+	document.write(parseInt(n)+"<br>"); // 10
+	document.write(parseFloat(n)+"<br>"); // 10.33
+	*/
+	
+	/*
+	n = "10,20,30";
+	document.write(Number(n)+"<br>"); // NaN
+	document.write(parseInt(n)+"<br>"); // 10
+	document.write(parseFloat(n)+"<br>"); // 10
+	*/
+	
+	/*
+	n = true;
+	document.write(Number(n)+"<br>"); // 1
+	document.write(parseInt(n)+"<br>"); // NaN
+	document.write(parseFloat(n)+"<br>"); // NaN
+	
+	console.log(parseInt("10abc")); // 10
+	*/
+	
+	// js 날짜 -> 숫자 변환 : Number()
+	// (기억***) 1727768473997
+	// 1970.1.1 0:0:0.000ms ~
+	document.write( Number( new Date() ) + "<br>" );
+</script>
+
+<script>
+
+	Number.MAX_VALUE;
+	Number.MIN_VALUE;
+
+	// 정수 확인
+	// Number.isInteger(10); // true
+	// Number.isInteger(10.23); // false
+	
+	// 숫자로 변환할 수 없는 경우 : NaN 반환
+	
+	/*
+	alert(); 기능은 같다.
+	(window.)alert(); 기능은 같다.
+	
+	Number.parseInt() 기능은 같다.
+	(window.)parseInt() 기능은 같다.
+	
+	Number.parseFloat() 기능은 같다.
+	(window.)parseFloat() 기능은 같다.
+	*/
+	
+</script>
+
+</body>
+</html>
