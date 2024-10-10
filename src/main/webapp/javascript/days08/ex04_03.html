@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <button>TypeWriter</button>
+  <p id="demo"></p>
+  
+</div>
+<script>
+	let content; // html 태그의 모든 내용을 저장
+	let timer;
+	let contentLength;
+	
+	$("button").on("click",function(){
+		// document.querySelector("body") == document.body == <body> 요소
+		// document.documentElement == <html> 요소 == $("html")
+		content = $("html").html();
+		// alert(content);
+		contentLength = content.length;
+		// alert(contentLength); // 1238
+		
+		typeWriter();
+		timer = setInterval(typeWriter, 10); // 0.01초 간격으로 한 문자씩 출력
+	});
+	
+	let i = 0;
+	function typeWriter(){
+		// charAt(i)
+		// "abc"[0] : js
+		let oneChar = content[i++];
+		
+		// let oldHtml = $("#demo").html();
+		// $("#demo").html( oldHtml + oneChar );
+		// 위와 동일
+		$("#demo").html(function(index,oldHtml){
+			return oldHtml + (oneChar == '\n' ? "<br>" : oneChar);
+		});
+		
+		// 자동으로 스크롤 내리기
+		window.scrollTo(0, document.body.scrollHeight);
+		
+		if(i == contentLength){
+			clearInterval(timer);
+			alert("출력 완료!!");
+		};
+	};
+</script>
+</body>
+</html>

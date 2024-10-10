@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+
+<style>
+	.myDiv{
+		background-color: #f1f1f1;
+		text-align: center;
+		border: 1px solid #d3d3d3;
+		position: absolute;
+		z-index: 9;
+	}
+	
+	.myDivHeader{
+		padding: 10px;
+		cursor: move;
+		z-index: 10;
+		background-color: #2396F3;
+		color: #fff;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <div id="myDiv1" class="myDiv">
+  	<div id="myDiv1Header" class="myDivHeader">Click Here1</div>
+  	<p>1</p>
+  	<p>2</p>
+  	<p>3</p>
+  </div>
+  
+  <div id="myDiv2" class="myDiv">
+  	<div id="myDiv2Header" class="myDivHeader">Click Here1</div>
+  	<p>1</p>
+  	<p>2</p>
+  	<p>3</p>
+  </div>
+  
+</div>
+<script>
+	// js drag()
+	function draggable(elemt){
+		// 현재 요소의 위치를 저장 변수
+		let elemtX = 0, elemtY = 0;
+		// 마우스가 움직이면 움직이는 거리
+		let moveX = 0, moveY = 0;
+		
+		// elemt.id + "Header"
+		if ( document.querySelector(`#${elemt.id}Header`) ) {
+			document.querySelector(`#${elemt.id}Header`).onmousedown = dragMouseDown;
+			
+		} // if
+		
+		// mousedown
+		function dragMouseDown(e){
+			e = window.event || e;
+			console.log(`[md] ${e.clientX}/${e.clientY}`);
+			
+			elemtX = e.clientX;
+			elemtY = e.clientY;
+			
+			// mousemove, mouseout 등록 처리
+			document.onmousemove = dragMouseMove;
+			document.onmouseup = dragMouseUp;
+		}
+		
+		function dragMouseMove(e){
+			e = window.event || e;
+			console.log(`[mv] ${e.clientX}/${e.clientY}`);
+			
+			moveX = elemtX - e.clientX;
+			moveY = elemtY - e.clientY;
+			
+			// #myDiv1 위치 이동
+			// elemt.left => "100px" 문자열로 돌린다.
+			// elemt.offsetLeft => "100"
+			elemt.style.left = (elemt.offsetLeft - moveX) + "px";
+			elemt.style.top = (elemt.offsetTop - moveY) + "px";
+			
+			// 움직인 위치를 찍어준다.
+			elemtX = e.clientX;
+			elemtY = e.clientY;
+		}
+		
+		function dragMouseUp(e){
+			// 이벤트 취소(제거)
+			document.onmousemove = null;
+			
+			document.onmouseup = null;
+		}
+		
+	} // draggable
+	
+	draggable( document.querySelector("#myDiv1") );
+	draggable( document.querySelector("#myDiv2") );
+</script>
+</body>
+</html>

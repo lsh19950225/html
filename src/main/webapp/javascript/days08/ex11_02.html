@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+	<!-- 주석처리 -->
+  <xmp class="code">
+     
+  </xmp>
+  
+  <h2>js HTML DOM</h2>
+  <p>Displaying document.body</p>
+  
+  <p id="demo" style="border:1px solid gray">demo</p>
+  
+</div>
+<script>
+	// let element = document.querySelector("h2").nextElementSibling.nextElementSibling;
+	
+	/*
+	let elements = 
+		document.getElementsByTagName("h2");
+	alert( elements[0].innerHTML ); // js HTML DOM
+	*/
+	
+	/*
+	let element = 
+		document.querySelector("h2")
+		.parentElement
+		.lastElementChild;
+	alert( element.innerHTML ); // demo
+	
+	alert(element.nodeType); // 1
+	alert(element.nodeName); // p
+	alert(element.nodeValue); // null
+	*/
+	
+	let nodeList = 
+		document.querySelector("h2")
+		.parentElement
+		.childNodes; // 모든 자식 노드
+	alert(nodeList.length); // 9
+	alert(nodeList[1].nodeName); // 3
+	alert(nodeList[1].nodeType); // #text
+	alert(nodeList[1].nodeValue); // null
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  <p id="demo"></p>
+</div>
+<script>
+	const person = {
+			name: "admin",
+			age: 20,
+			
+			display: function(){
+				// alert(this);
+				$("#demo").html(this.name + "/" + this.age);
+			}
+	};
+	
+	// person.display(); // 결과 : admin/20
+	
+	
+	let disp = person.display.bind(person); // 결과 : admin/20
+	
+	// 3초 후에 person.display(); 함수 호출한다.
+	// 결과 : /undefined
+	// 콜백 함수 - this가 원래 this 가 아니다. / 체크 필수
+	setTimeout(disp, 3000); // () 없다. / 함수 등록하는거다.
+</script>
+</body>
+</html>

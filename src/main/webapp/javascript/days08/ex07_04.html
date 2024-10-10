@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  <button>0</button>
+  
+</div>
+<script>
+	// js
+	/*
+	const btns = document.querySelectorAll("button");
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].onclick = function(){
+			let count = this.innerHTML; // 0
+			this.innerHTML = ++count;
+		};
+	}; // for
+	*/
+	
+	// jquery
+	/*
+	$("button").on("click",function(){
+		$(this).html(function(index,oldHtml){
+			return ++oldHtml;
+		});
+	});
+	*/
+</script>
+
+<script>
+	// 20개의 버튼의 클릭 수를 저장할 변수
+	/*
+	let btn1Counter = 1;
+	let btn2Counter = 1;
+	let btn3Counter = 1;
+	:
+	let btn20Counter = 1;
+	*/
+	
+	// let counts = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+</script>
+
+<script>
+	//[js 함수 클로저 이용]
+	// js
+	/*
+	const btns = document.querySelectorAll("button");
+	for (var i = 0; i < btns.length; i++) {
+		btns[i].onclick = (function(){ // 익명함수의
+			let counter = 0; // 지역변수
+			return function(){ // 중첩함수
+				// alert(this);
+				counter++;
+				event.srcElement.innerHTML = counter; // this도 가능
+			};
+		})();
+	}; // for
+	*/
+	
+	// jq
+	$("button").on("click",(function(){
+		let counter = 0;
+		return function(){
+			// alert(this); // HtmlButtonElement
+			$(this).html(++counter);
+		};
+	})());
+</script>
+</body>
+</html>

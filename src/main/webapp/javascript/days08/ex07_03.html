@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     [js 중첩 함수 이해]
+     	ㄴ ? 함수 안에 함수
+     	ㄴ 모든 함수에서는 전역변수 접근 가능
+     	ㄴ 상위(부모) 범위 변수 접근 가능
+  </xmp>
+  
+  <button>count!!</button>
+  <p id="demo"></p>
+  
+</div>
+<script>
+	/*
+	function add(){
+		let counter = 0; // 지역변수
+		
+		// 중첩 함수
+		function plus(){
+			// 상위(부모) 범위의 변수 접근 가능
+			counter += 1;
+		}; // plus
+		
+		plus();
+		
+		return counter;
+	}; // add
+	
+	
+	$("button").on("click",function(){
+		// add() -> plus() -> counter 1증가 / 리턴
+		$("#demo").html( add() ); // 1
+	});
+	*/
+</script>
+
+<script>
+	/*
+	let counter = 0; // 전역변수
+	let plus = function(){
+		counter += 1;
+		return counter;
+	}
+	
+	plus();
+	plus();
+	plus();
+	alert(counter); // 3
+	*/
+</script>
+
+<script>
+	// 					자체 호출 함수 : plus = 리턴값
+	let plus = (function(){
+		/* 함수 클로저 */
+		let counter = 0; // 지역변수, 중첩함수 plus()로 마치 전역변수처럼 사용한다.
+		return function(){ // 중첩함수 / return : 함수가 리턴된다.
+			counter++;
+			return counter;
+		};
+	})();
+	
+	$("button").on("click",function(){
+		$("#demo").html( plus() );
+	});
+</script>
+</body>
+</html>

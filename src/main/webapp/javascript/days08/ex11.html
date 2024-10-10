@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+  	
+     [js html DOM]
+     ex11_02.html
+     ex11_03.html
+     
+     1. DOM
+     	ㄴ Document Object Model
+     2. 웹 페이지 요청 <-> 응답
+     			request 		response
+     3. 웹 브라우저가 응답받은 웹페이지를
+     	로딩하면 문서객체모델(DOM)을 생성
+     4. html 문서의 DOM 객체를 사용해서
+     	모든 요소에 엑세스, 변경 등등 조작할 수 있다.
+     5. DOM 모델은 객체 트리로 구성
+     6. html 문서의 모든 것 : 노드(Node)이다.
+     	ㄴ 요소, 속성, 주석처리, 선언문, 텍스트
+     	ㄴ html 요소 : root element
+     7. 모든 노드들은 관계를 맺고 있다.
+     	ㄴ 부모와 자식 관계
+     		parentNode 	childNode
+     		parentElement
+     	ㄴ 형제 관계
+     		nextSibling
+     		nextElementSibling
+     		
+     		previousSibling
+     		previousElementSibling
+     		
+     		firstChild
+     		lastChild
+     		
+     		모든 자식 노드 목록 : childNodes
+     			NodeList
+     8. 각각의 노드들은 3가지 속성을 공통적으로 가지고 있다.
+     	1) nodeValue 속성
+     		요소노드 - null
+     		속성노드 - 속성값
+     		텍스트노드 - 텍스트
+     		
+     	2) nodeName 속성
+     		요소노드 - 태그명
+     		속성노드 - 속성명
+     		텍스트노드 - #text
+     		주석노드 - #comment
+     		
+     	3) nodeType 속성
+     		1 - 요소노드
+     		2 - 속성노드
+     		3 - 텍스트노드
+     		4 - 주석노드
+     		5 - html노드
+     		6 - html 선언문 DOCTYPE
+     		
+     9. DOM 메서드
+       1) html 요소 찾는 메서드
+         document.getElementById()
+         document.getElementsByClassName()
+         document.getElementsByName()
+         document.getElementsByTagName()
+         document.querySelector()
+         document.querySelectorAll()
+       2) html 요소 변경 메서드
+         element.setAttribute();
+         element.getAttribute();
+         element.innerHTML
+         element.innerText
+       3)     요소 생성, 추가, 삭제
+       document.createElement();
+       document.appendChild();
+       document.removeChild();
+       document.replaceChild();
+       
+       4) html 객체
+         document.forms 컬렉션
+         document.scripts 컬렉션
+         document.links
+         document.images
+         
+         document.body =   body태그 == $("body")
+         document.documentElement = html태그
+         document.title  = title 태그
+         document.doctype =  !DOCTYPE  태그
+         
+         document.cookie = 쿠키 속성
+         document.head  = head 태그
+         등등
+         
+  </xmp>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     call(); : 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+     apply(); : 다른 객체의 메서드를 불러서 처리할 수 있는 함수
+     
+     차이점 - 매개변수가 있는 경우에 따라 달라진다.
+     	ㄴ call() : 매개변수를 나열한다.
+     	ㄴ apply() : 매개변수 [배열]을 만들어서 사용한다.
+  </xmp>
+</div>
+<script>
+	// js 객체 person1, 2, ... 선언
+	let person = {
+			print: function(){
+				return this.name + "/" + this.age;
+			},
+			printf: function(city, eyeColor){
+				return this.name + "/" + this.age + "/" + city + "/" + eyeColor;
+			}
+	};
+	
+	let person1 = {
+			name: "hong",
+			age: 20
+			/*
+			print: function(){
+				return this.name + "/" + this.age;
+			}
+			*/
+	};
+	
+	let person2 = {
+			name: "admin",
+			age: 40
+			/*
+			print: function(){
+				return this.name + "/" + this.age;
+			}
+			*/
+	};
+	
+	// person1.print(); : 원래는 이렇게 불러온다.
+	// person 다른 객체의 print() 함수를 호출해서 출력
+	person1.print.call(person); // 형식 : 매개변수가 없을때는 동일하다. // 이름, 나이, + 출신지역, 눈색
+	person1.printf.call(person, "seoul", "blue"); // + 출신지역, 눈색 : 나열하면 된다.
+	
+	// person2.print();
+	person2.print.apply(person);
+	person2.printf.apply(person, ["seoul", "blue"]); // + 출신지역, 눈색 : 배열로
+	
+	// 배열 가장 큰값, 작은값
+	const m = [3,5,2,4,1];
+	let max = Math.max.apply(null, m); // Math.max 이걸로 명시를 한 상태에서 null : 누구 객체꺼 - 써도 상관없다.
+</script>
+
+<script>
+	// bind() 묶다, 감싸다
+	// 다른 객체의 메서드를 내 객체에다가 묶는다. 내 함수로 만든다.
+	let result = person.print.bind(person1)(); // 형식
+	alert(result); // 결과 : hong/20
+</script>
+</body>
+</html>
