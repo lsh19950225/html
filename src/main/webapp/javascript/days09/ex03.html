@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <!-- return 기본 이벤트 취소 -->
+  <a onclick="return test1();" href="http://www.naver.com">naver</a>
+  <br />
+  <a href="http://www.naver.com">naver</a>
+  
+  <script>
+  	// js
+  	function test1(){
+  		// alert("test1");
+  		
+  		// 이동하지 못하게 하고 싶다.
+  		let result = confirm("이동 확인"); // 확인 취소 버튼이 뜬다.
+  		// alert(result); // 확인 : true / 취소 : false
+  		
+  		// 확인 눌렀을 때 이동 / 취소 이동 x
+  		
+  		return result;
+  	};
+  	
+  	// jq 기본 이벤트 취소
+  	$("a").last().on("click",function(event){
+  		
+  		let result = confirm("이동 확인");
+  		
+  		if(!result){ // 취소
+  			// 전파 : 이벤트가 버블링(부모에게 전파되는걸) 멈춘다.
+  			// event.stopPropagation();
+  		
+  			// 기본 이벤트 취소 jq 메서드
+  			event.preventDefault();
+  		} // if
+  		
+  	});
+  </script>
+  
+</div>
+</body>
+</html>

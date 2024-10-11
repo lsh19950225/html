@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <img src="../images/item01.gif" alt="" />
+  
+</div>
+<script>
+	// item01 ~ item21 이미지 랜덤하게 클릭하는 곳에 추가
+	function getRandom( min, max ){
+       return Math.floor( Math.random()*(max-min+1)+min );
+  	}
+	
+	// oncontextmenu : 오른쪽 마우스를 클릭하면 나오는 메뉴가 발생하는 이벤트
+	document.oncontextmenu = function(){
+		// alert("x");
+		return false; // false : 안뜬다. - 이벤트 취소
+	};
+	
+	document.onmousedown = function(){
+		// console.log( event.button ); // 마우스 왼 : 0, 가 : 1, 오 : 2
+		if(event.button == 0){ // 마우스 왼 : 0
+			// <title></title>
+			document.title = event.clientX + "/" + event.clientY
+							+ "/" + $("img").width();
+			//
+			let img = document.createElement("img");
+			// 01~21
+			var imgNo = getRandom(1,21).toString().padStart(2,0);
+			var src = `../images/item${imgNo}.gif`;
+			img.setAttribute("src", src);
+			
+			let left = event.clientX - $("img").width()/2;
+			let top = event.clientY - $("img").height()/2;
+			
+			img.setAttribute("style", `position:absolute;left:${left}px;top:${top}px`);
+			
+			document.body.appendChild(img);
+		}else if(event.button == 1){ // 마우스 가 : 1
+			document.body.removeChild(event.srcElement);
+		}else if(event.button == 2){ // 마우스 오 : 2
+			let a = document.querySelectorAll("img");
+				a.forEach( b => b.remove() );
+			}
+	};
+</script>
+</body>
+</html>

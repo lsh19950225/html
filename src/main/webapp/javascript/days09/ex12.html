@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     js 3가지 대화상자(팝업상자)
+     1. 경고창 - alert()
+     2. 확인창 - confirm(message)
+     3. 프롬프트 상자(입력상자)
+  </xmp>
+  
+  <button>종료</button>
+  
+</div>
+<script>
+	$("button").on("click",function(){
+		// window.alert("경고창");
+		let message = "정말 종료?";
+		if(confirm(message)){ // 확인버튼 클릭
+			self.close();
+		}
+	});
+</script>
+
+<script>
+	message = "나이 입력";
+	age = 0;
+	
+	// 취소 : null
+	// 확인 : 입력한 값
+	let result = prompt(message, age);
+	
+	alert(result);
+</script>
+</body>
+</html>

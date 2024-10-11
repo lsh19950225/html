@@ -13,6 +13,40 @@
     vertical-align: text-bottom;
  }
 </style>
+
+<style>
+  *{
+      box-sizing: border-box;
+   }
+   
+    .alert{
+      padding: 20px;
+      background-color: #f44336;
+      color:white;
+      opacity: 1; 
+      transition:opacity 0.6s, height 0.6s;
+      margin-bottom: 15px;
+   }
+   
+    .closebtn{
+     margin-left: 15px;
+     color:white;
+     font-weight: bold;
+     float:right;
+     font-size: 22px;
+     line-height: 20px;
+     cursor:pointer;
+     transition:0.3s;
+   }
+   
+   .closebtn:hover{
+      color:black;
+   }
+   
+   .alert.success{     background-color: #4caf50;   }
+   .alert.info{      background-color: #2196f3;   }
+   .alert.warning{     background-color: #ff9800;   }
+</style>
 </head>
 <body>
 <header>
@@ -24,8 +58,177 @@
 </header>
 <div>
   <xmp class="code">
-     내일 ㅂㅂ
+     
   </xmp>
+  
+  <h2>알림(공지사항)</h2>
+   공지사항 타입 : 
+   <select name="type" id="type">
+      <option>type 없음</option>
+      <option>success</option>
+      <option>warning</option>
+      <option>info</option>
+   </select>
+   <br>
+   내용  : <input type="text" />
+   <button>공지사항 추가</button>
+   <br>
+   
+   <hr id="hr">
+   
+   <!-- <div class="alert">
+     <span class="closebtn">&times;</span> x
+     <strong>Danger!</strong>
+     Lorem ipsum dolor sit amet, consectetur adipisicing.
+   </div>
+   <div class="alert success">
+     <span class="closebtn">&times;</span>
+     <strong>Success!</strong>
+     Lorem ipsum dolor sit amet, consectetur adipisicing.
+   </div>
+   <div class="alert warning">
+     <span class="closebtn">&times;</span>
+     <strong>Warning!</strong>
+     Lorem ipsum dolor sit amet, consectetur adipisicing.
+   </div>
+   <div class="alert info">
+     <span class="closebtn">&times;</span>
+     <strong>Info!</strong>
+     Lorem ipsum dolor sit amet, consectetur adipisicing.
+   </div> -->
+  
 </div>
+
+<script>
+	
+	// JSP JDBC DB 연동 SELECT + AJAX + JSON 처리
+	let data = [
+		{type:"success",  message:"Lorem ipsum dolor sit amet, consectetur adipisicing."},
+        {type:"warning", message:"Lorem ipsum dolor sit amet, consectetur adipisicing."},
+        {type:"info", message:"Lorem ipsum dolor sit amet, consectetur adipisicing."},
+        {type:"success", message:"Lorem ipsum dolor sit amet, consectetur adipisicing."}
+	];
+	
+	/*
+	let hr = document.querySelector("#hr");
+	for (let notice of data) {
+		// console.log( notice.type + "/" + notice.message );
+		let content = "<div>"
+		content += `<span class="closebtn">&times;</span>`;
+		content += `<strong>${ notice.type }</strong>`;
+		content += `${ notice.message }`;
+		content += "</div>";
+		
+		hr.insertAdjacentHTML("afterend", content);
+	}
+	*/
+
+	// 공지 앞에 추가하기 타입 없으면 alert
+	for (let notice of data) {
+		
+			let noticeElement = 
+				`<div class="alert ${notice.type}">
+			     <span class="closebtn">&times;</span>
+			     <strong>${notice.type}</strong>
+			     ${notice.message}
+			   </div>`;
+			   
+			$("body > div").append(noticeElement);
+		
+	} // for
+	
+		// 공지사항 추가 버튼
+		$("button").on("click",function(){
+			
+			let type = $("#type").val();
+			let message = $(":text").val();
+			
+			if (type == "type 없음") {
+				alert("타입을 다시 선택하세요.");
+				return;
+			} // if
+			
+			/*
+			if (		) {
+				alert("공지사항 내용 입력하세요.");
+				return;
+			} // if
+			*/
+			
+			let noticeElement = 
+				`<div class="alert ${type}">
+			     <span class="closebtn">&times;</span>
+			     <strong>${type}</strong>
+			     ${message}
+			   </div>`;
+			
+			// 후 / 밑과 동일
+			// $("#hr").after(noticeElement);
+			// $("#hr").next().before(noticeElement);
+			$("div.alert").first().before(noticeElement);
+			
+			// 전
+			// js insertBefore()
+			// jq before()
+			
+			// 여기서 noticeElement > span.closebtn click 이벤트 등록
+			$("div.alert").first().find("span.closebtn").on("click",function(){
+				
+				$(this).parent().css("opacity","0")
+				
+				setTimeout(() => {
+					$(this).parent().css("display","none");
+				}, 600);
+				
+			}); // closebtn
+			
+		}); // button
+	
+		$(".closebtn").on("click",function(){
+			
+			$(this).parent().css("opacity","0")
+			
+			setTimeout(() => {
+				$(this).parent().css("display","none");
+			}, 600);
+			
+		}); // closebtn
+	
+</script>
+
 </body>
 </html>
+
+<!-- 
+for (let notice of data) {
+    let type = notice.type ;
+    let message =  notice.message;
+     
+    const alertDiv = document.createElement("div");
+    alertDiv.classList.add("alert");
+    alertDiv.classList.add(type);
+
+    const spanBtn = document.createElement("span");
+    spanBtn.classList.add("closebtn");
+    spanBtn.innerHTML = "&times";  // 공지사항 닫기(x)
+    spanBtn.onclick = function (){
+      const parentDiv = this.parentElement;
+      parentDiv.style.opacity = "0";
+      setTimeout(  function (){
+        parentDiv.style.display = "none";
+      }, 600);
+
+    };
+    alertDiv.appendChild( spanBtn );
+
+    const strong = document.createElement("strong");
+    strong.innerHTML = type.toUpperCase() + "!";
+    alertDiv.appendChild( strong );
+
+    let content =  document.createTextNode(message);
+    alertDiv.appendChild( content );
+
+    const hrElemt = document.querySelector("body > div > hr");
+    hrElemt.parentElement.appendChild(alertDiv); 
+}
+ -->
