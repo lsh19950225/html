@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+
+<style>
+	.container{
+		width: 400px;
+		height: 200px;
+		border: 1px solid gray;
+		position: relative;
+		overflow: hidden;
+	}
+	
+	.container div{
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		color: white;
+		text-align: center;
+	}
+	
+	#box1{
+		background-color: red;
+	}
+	
+	#box2{
+		background-color: blue;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <button>start</button>
+  
+  <div class="container">
+	  <div id="box1">a</div>
+	  <div id="box2">b</div>
+  </div>
+  
+  <script>
+  	$("#box2").css("left",$("#box2").width());
+  	
+  	$("button").on("click",function(){
+  		
+  		setInterval(()=>{
+  			
+	  		$(".container div:first")
+	  				.stop(true,true)
+	  				.animate({left:"-=400px"}, {queue:false})
+	  					.next()
+	  						.stop(true,true)
+	  						.animate({left:"-=400px"}, function(){ // 콜백함수
+	  							// this : b
+	  							// detach() : 제거하고 잘라낸다.
+	  							let box = $(this).prev().detach();
+	  							$(".container").append(box);
+	  							box.css("left","400px");
+	  							
+	  							// 위와 동일
+	  							// box.css("left","400px")
+	  							// 	.appendTo( $(".container") );
+	  							
+	  						})
+  						
+  		}, 2000);
+  		
+  	});
+  </script>
+  
+</div>
+</body>
+</html>

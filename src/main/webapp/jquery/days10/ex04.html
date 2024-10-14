@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+
+<style>
+	#box{
+		width: 100px;
+		height: 100px;
+		position: absolute; /* 절대좌표, 상대좌표, 고정 */
+		background-color: aqua;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <button>실행</button>
+  <div id="box"></div>
+  
+  <script>
+  	$("button").on("click",function(){
+  		// $("#box").animate( { left:"250px" } );
+  		
+  		// +=, -= 현재 요소의 기준값에서 상대값을 의미
+  		/*
+  		$("#box").animate( { 
+  			left:"+=50px",
+  			opacity:"0.5",
+  			height:"+=50px",
+  			width:"+=50px"
+  			} );
+  		*/
+  		
+  		// show hide toggle
+  		$("#box").animate( {
+				height:'toggle'
+  		} );
+  	});
+  </script>
+  
+</div>
+</body>
+</html>

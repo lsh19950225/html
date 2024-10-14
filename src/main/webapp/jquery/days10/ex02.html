@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     1. jquery selector 	포함한다.(css selector)
+     	1) * 				$("*") 모든 요소를 선택자로 사용한다.
+     	2) #아이디명 		$("#아이디명")
+     	3) .클래스명 		$(".클래스명")
+     	4) 태그명 			$("p")
+     	5) 태그명, 태그명...
+     			$("p, div, span").action() , 로 나열 가능하다.
+     	6) :first :last :even :odd
+     			first() last()
+     			ex02_02.html
+     	7) [css selector]
+     		:first-child
+     		:last-child
+     		:nth-child(n)
+     		:nth-last-child(n)
+     		
+     		:first-of-type
+     		:last-of-type
+     		:nth-of-type(n)
+     		:nth-last-of-type(n)
+     		
+     	8) :only-child
+     		:only-of-type
+     		ex02_03.html
+     		
+     	9) :eq(index) eq()
+     		:gt(no)
+     		:lt(no)
+     		ex02_04.html
+     		
+     	10) css selector
+     		부모요소 자식요소
+     		element element
+     		div p
+     		
+     		element > element
+     		element + element
+     		element ~ element
+     		
+     	11) :not(jquery selector) 		not()
+     		ex02_05.html
+     		
+     	12) :header == 모든 hn 태그(h1~h6)
+     		ex02_06.html
+     		
+     	13) :animated
+     			:focus
+     		ex02_07.html
+     		
+     	14) :empty
+     		:parent
+     		
+     		:root
+     		:hidden
+     		:visible
+     		ex02_08.html
+     		
+     	15) :has(selector) 			has()
+     		ex02_09.html
+     		
+     	16) css selector
+     		[attribute]
+     		[attribute=value]
+     		[attribute^=value]
+     		[attribute$=value]
+     		[attribute*=value]
+     		[attribute~=value]
+     		[attribute|=value]
+     		
+     	17)
+     		:checked 모든 체크된 요소
+     		:selected 선택된 options
+     		:enabled 활성화된 요소
+     		:disabled 비활성화된 요소
+     		
+     	18) :input <input>
+     			:text <input type="text">
+     			:password
+     			:radio
+     			:checkbox
+     			:submit
+     			:reset
+     			:button <button>
+     			:image <input type="image">
+     			:file <input type="file">
+     		
+     2. action()
+     	$(jquery selector).action();
+     	
+     	1) 효과(effects)
+     		ㄱ. show(), hide(), toggle()
+     		ex03.html
+     		
+     		ㄴ. fade() / fadein() / fadeout()
+     		fadeTo(), fadeToggle();
+     		ex03_02.html
+     		
+     		ㄷ. sliding 		미끄러지다.
+     			slideDown()
+     			slideUp()
+     			slideToggle()
+     			ex03_03.html
+     			
+     		ㄹ. animate()
+     			사용자 정의 애니메이션 효과를 만들 수 있다.
+     			$("선택자").animate( { css 속성 정의 }, 효과지속시간, 콜백함수 );
+     			ex04.html
+     				:
+     			ex04_06.html
+  </xmp>
+</div>
+</body>
+</html>

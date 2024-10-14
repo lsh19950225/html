@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<!-- CDN <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<script src="jquery-3.7.1.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     1. jQuery는
+     		ㄴ 빠르고 작으며 기능이 풍부한 JavaScript 라이브러리입니다.
+     		ㄴ 다양한 브라우저에서 작동하는 사용하기 쉬운 API로
+     			ㄴ HTML 문서 탐색 및 조작
+     			ㄴ , 이벤트 처리
+     			ㄴ , 애니메이션
+     			ㄴ , Ajax와 같은 작업을 훨씬 더 간단하게 만들어줍니다.
+     		ㄴ 다재다능함과 확장성이 결합된 jQuery는 수백만 명의 사람들이
+     			JavaScript를 작성하는 방식을 바꾸어 놓았습니다.
+     2. CDN(Content delivery network) 은 전 세계에
+     	분산된 서버에서 jQuery를 호스팅하여
+     	성능상의 이점을 제공할 수 있습니다.
+     3. jquery 사용하는 구문(형식)
+	     $(jquery selector).action();
+	     	1) jquery selector
+	     	2) action()
+	     	
+	 4. 웹 페이지에서 jquery 외에 다른 프레임워크를 사용할 때
+	 jquery 에서 사용하는 $ 기호를 다른 프레임워크에서 다른 의미의 변수로 벌써
+	 사용이 되고 있다면 $ 기호의 충돌이 발생할 것이다.
+	 
+	 다른 프레임워크( Angular, knokout, ember, backbone 등등 )
+	 
+	 	jQuery 변수의 다른 기호로 $ 축약해서 사용한다.
+	 	
+	 	let jQuery = {};
+	 	let $ = jQuery;
+	 	
+	 	jquery 사용하는 $ 변수를 해제 - noConflict()
+  </xmp>
+  
+  <button>확인</button>
+  <p id="demo"></p>
+  
+  <script>
+  
+  	// $ == jQuery == window.jQuery
+  
+  	/*
+  	$.noConflict(); // $ 약식기호 해제한다.
+  
+  	jQuery("button").on("click",function(){ // $ 원래이름 : jQuery
+  		jQuery("#demo").html("이시훈");
+  	});
+  	*/
+  	
+  	// 만약에 jQuery 변수명도 충돌이 발생한다면
+  	var jq = $.noConflict(); // $ 약식기호 해제하고 별칭을 준다.
+  
+  	jq("button").on("click",function(){
+  		jq("#demo").html("이시훈");
+  	});
+  </script>
+  
+</div>
+</body>
+</html>

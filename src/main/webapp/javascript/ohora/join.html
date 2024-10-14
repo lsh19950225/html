@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 100;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Thin.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 300;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Light.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 400;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 500;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Medium.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 700;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.otf) format('opentype');}
+
+@font-face {font-family: 'Noto Sans KR';font-style: normal;font-weight: 900;src: url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff2) format('woff2'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.woff) format('woff'),url(//fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Black.otf) format('opentype');}
+
+element.style {
+    padding-top: 156px !important;
+}
+
+#ivStyle * {
+    letter-spacing: 0px;
+}
+
+#wrap {
+    padding-top: 115px !important;
+}
+
+body, html, :lang(ko) {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, input, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    outline: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+body, h1, h2, h3, h4, h5, h6, table, pre, xmp, plaintext, listing, input, textarea, select, button, a {
+    font-family: inherit;
+    line-height: normal;
+}
+
+style attribute {
+    --vh: 7.38px;
+    --vh2: 7.38px;
+    --topBanner: 0px;
+    --header: 0px;
+    --gnb: 0px;
+    --footer: 0px;
+    --vw: 7.51px;
+}
+
+html {
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+}
+
+/* 위 - 공용 */
+
+#ivStyle #container {
+    border: none;
+}
+
+/* #container {
+    border-top: 1px solid #e5e5e5;
+} */
+
+#contents {
+    min-height: 670px;
+}
+
+#SMS_marketingCustom {
+    padding: 0 20px;
+}
+
+#ivStyle .SP_layoutFix {
+    width: 1050px;
+}
+
+/* .SP_layoutFix {
+    width: 1050px;
+} */
+
+.SP_joinIntroContainer {
+    text-align: center;
+}
+
+.SP_layoutFix {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.SP_joinIntroContainer .SP_joinIntroinner {
+    width: 480px;
+    vertical-align: top;
+}
+
+.SP_joinIntroContainer .SP_joinIntroinner {
+    display: inline-block;
+    vertical-align: top;
+    width: 390px;
+    margin-bottom: 30px;
+}
+
+.join_title {
+    padding: 100px 15px 40px;
+    font-size: 28px;
+    line-height: 1.4;
+    text-align: center;
+    color: #0e050b;
+}
+
+b {
+    font-weight: bold;
+}
+
+.coupon_img {
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background: url(../ohora_html/bb_1.webp) no-repeat;
+    background-size: cover;
+    background-position: center -40px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+    unicode-bidi: isolate;
+}
+
+input[type="hidden" i] {
+    display: none !important;
+}
+
+input:not([type="image" i], [type="range" i], [type="checkbox" i], [type="radio" i]) {
+    overflow-clip-margin: 0px !important;
+    overflow: clip !important;
+}
+
+input[type="hidden" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    padding: initial;
+    border: initial;
+}
+
+input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
+}
+
+input {
+    font-style: ;
+    font-variant-ligatures: ;
+    font-variant-caps: ;
+    font-variant-numeric: ;
+    font-variant-east-asian: ;
+    font-variant-alternates: ;
+    font-variant-position: ;
+    font-weight: ;
+    font-stretch: ;
+    font-size: ;
+    font-family: ;
+    font-optical-sizing: ;
+    font-size-adjust: ;
+    font-kerning: ;
+    font-feature-settings: ;
+    font-variation-settings: ;
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    background-color: field;
+    margin: 0em;
+    padding: 1px 0px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+
+#SMS_join_intro .xans-member-login .btnKakao {
+    display: block;
+    width: 100%;
+    padding: 0 20px;
+    border: 1px solid #fae300;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #391b1b;
+    background-color: #fae300;
+    background-repeat: no-repeat;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+#SMS_join_intro .btnArea a {
+    margin-bottom: 0;
+    padding: 0 20px;
+    height: auto;
+    line-height: 1;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+span, a {
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#SMS_join_intro .xans-member-login .btnKakao:before {
+    background-image: url(../ohora_html/bb_2.png);
+    background-size: 30px auto;
+}
+
+#SMS_join_intro .xans-member-login .btnKakao:before, .SP_join_snsList li a:before {
+    display: inline-block;
+    position: static;
+    width: 35px;
+    height: 50px;
+    background-size: 35px auto;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    vertical-align: middle;
+    transform: none;
+    content: "";
+}
+
+#SMS_join_intro .btnArea a > span {
+    width: calc(100% - 35px);
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: top;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: "Noto Sans KR", "맑은 고딕", Malgun Gothic, "돋움", Dotum;
+}
+
+.displaynone {
+    display: none !important;
+}
+
+.SP_cm_btn.SP_btn_black_bg {
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.SP_cm_btn.type2 {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    background: #fff;
+    border: solid 1px #ddd;
+    font-weight: normal;
+    padding-right: 0;
+}
+
+.SP_cm_btn.SP_btn_black_bg, .SP_cm_btn.SP_btn_blue_bg {
+    color: #fff;
+    background: #111;
+}
+
+.SP_cm_btn {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(33.333% - 10px);
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+    color: #000;
+    background: #fff;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#SMS_join_intro .btnArea.sns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.SP_join_snsList {
+}
+
+.SP_join_snsList li:first-child {
+    margin: 0;
+    border: 0;
+}
+
+.SP_join_snsList li:first-child {
+    margin-top: 10px;
+    border: 1px solid #a0a0a0;
+}
+
+.SP_join_snsList li {
+    border: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.SP_join_snsList li {
+    display: block;
+    vertical-align: middle;
+    border: 1px solid #a0a0a0;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+ul, li, ol, dl, dt, dd {
+    list-style: none;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    unicode-bidi: isolate;
+}
+
+.SP_join_snsList li a {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 15px 0;
+    border-radius: 4px;
+}
+
+.SP_join_snsList li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+#SMS_join_intro .btnArea.sns a.btnNaver:before {
+    background: url(../ohora_html/bb_3.png);
+    background-size: 30px auto;
+}
+
+.SP_join_snsList li a:before {
+    content: '';
+    display: inline-block;
+    width: 27px;
+    height: 26px;
+    position: absolute;
+    top: 50%;
+    left: 28px;
+    transform: translateY(-50%);
+    background: url(/smartpc/_img/icon/icon_naver.svg) no-repeat center center;
+    background-size: 80%;
+}
+
+.SP_join_snsList li a .txt {
+    font-size: 18px;
+    color: #000;
+    display: inline-block;
+    vertical-align: top;
+    height: 60px;
+    line-height: 60px;
+    margin-left: 0;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.SP_join_snsList li + li {
+    margin-top: 15px;
+}
+
+#SMS_join_intro .btnArea.sns a.SMSjoin_btnTD:before {
+    background: url(../ohora_html/bb_4.png) no-repeat;
+}
+
+#SMS_join_intro .btnArea.sns a.btnApple:before {
+    background: url(../ohora_html/bb_5.png);
+    background-size: 30px auto;
+}
+
+#SMS_join_intro .SP_utility_Wrap {
+    padding: 45px 0;
+}
+
+.SP_utility_Wrap, .SP_gologin_Wrap {
+    padding: 30px 0;
+    color: #000;
+}
+
+.SP_utility_Wrap .SP_findinfo {
+    font-size: 0;
+}
+
+.SP_utility_Wrap .SP_findinfo li {
+    display: inline-block;
+}
+
+.SP_utility_Wrap .SP_findinfo li a {
+    padding: 0 23px;
+    font-size: 14px;
+}
+
+.SP_utility_Wrap .SP_findinfo li a {
+    display: inline-block;
+    position: relative;
+    font-size: 12px;
+    color: #000;
+    vertical-align: top;
+    padding: 0 13px;
+}
+
+.SP_utility_Wrap .SP_findinfo li:first-child a:before {
+    display: none;
+}
+
+.SP_utility_Wrap .SP_findinfo li a:before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    top: 54%;
+    transform: translateY(-50%);
+}
+</style>
+</head>
+<body>
+
+<div id="wrap" style="padding-top: 156px !important;">
+            <div id="container">
+                <div id="contents">
+                    
+
+
+<div id="SMS_marketingCustom">
+    <div class="SP_joinIntroContainer SP_layoutFix">
+        <div class="SP_joinIntroinner">
+            <!--div class="SP_joinIntro_Top">
+            <div module="bannermanage2_display_16" class="login_bnr_zone">
+            <a href="{$href}" alt="{$title}" {$target} >{$banner}</a>
+            </div>      
+            </div-->
+            <div id="SMS_join_intro">
+                <!--div df-banner-code="join-banner" hidden class="SP_joinIntro_Top">
+                <div df-banner-clone class="login_bnr_zone">
+                <a href="{#href}">{#item}</a>
+                </div>
+                </div-->   
+                <div class="join_title">
+                    카카오 간편 회원가입 시<br><b>무료배송과 3,000원 할인 쿠폰</b>을<br> 선물로 드려요.
+                </div>   
+                <div class="coupon_img"></div>
+               
+                <div class="SP_joinIntro_Cont">
+                    <form id="member_form_1708730238" name="" action="/exec/front/Member/login/" method="post" target="_self" enctype="multipart/form-data">
+<input id="returnUrl" name="returnUrl" value="https://www.ohora.kr/" type="hidden">
+<input id="forbidIpUrl" name="forbidIpUrl" value="/" type="hidden">
+<input id="certificationUrl" name="certificationUrl" value="/intro/adult_certification.html" type="hidden">
+<input id="sIsSnsCheckid" name="sIsSnsCheckid" value="" type="hidden">
+<input id="sProvider" name="sProvider" value="" type="hidden"><div class="xans-element- xans-member xans-member-login "><div class="btnJoin btnArea type1">
+                            <a href="#none" class="btnKakao  sns_login_Btn" onclick="MemberAction.kakaosyncLogin('9ae31018e6a3df11adb5d4dfa9cc9d37')"><span>카카오로 <span>3</span>초 만에 시작하기</span></a>
+                        </div>
+<div class="displaynone">
+                            <a href="/member/join.html" class="SP_cm_btn type2 SP_btn_black_bg">일반 회원가입</a>
+                        </div>
+
+<input id="returnUrl" name="returnUrl" value="/index.html" type="hidden">
+<input id="forbidIpUrl" name="forbidIpUrl" value="/" type="hidden">
+<input id="certificationUrl" name="certificationUrl" value="/intro/adult_certification.html" type="hidden">
+<input id="sIsSnsCheckid" name="sIsSnsCheckid" value="" type="hidden">
+<input id="sProvider" name="sProvider" value="" type="hidden"><div class="xans-element- xans-member xans-member-login SP_join_snsList btnArea type1 sns "><li class="lg_naver"><a href="#none" class="btnNaver  sns_login_Btn" onclick="MemberAction.snsLogin('naver', '%2Findex.html')"><span class="txt"><strong>네이버</strong> 간편가입</span></a></li>
+<li class="normal_join"><a href="/member/join.html" class="SP_cm_btn SMSjoin_btnTD sns_login_Btn"><span class="txt">일반 회원가입</span></a></li>
+<li class="lg_apple"><a href="#none" class="btnApple  sns_login_Btn" onclick="MemberAction.snsLogin('apple', '%2Findex.html')"><span>Apple로 로그인</span></a></li>
+<!--li class="lg_kakao"><a href="#none" class=" sns_login_Btn" onclick="MemberAction.kakaosyncLogin('9ae31018e6a3df11adb5d4dfa9cc9d37')"><span class="txt"><strong>카카오</strong> 간편가입</span></a></li>
+                            <li class="lg_facebook"><a href="#none" class=" sns_login_Btn" onclick="MemberAction.snsLogin('facebook', '%2Findex.html')"><span class="txt"><strong>페이스북</strong> 간편가입</span></a></li-->
+</div>
+<div class="SP_utility_Wrap">
+                            <div class="SP_findinfo">
+                                <li><a href="/member/login.html">기존회원 로그인</a></li>
+                                <li><a href="/member/login.html?noMemberOrder&amp;returnUrl=%2Fmyshop%2Forder%2Flist.html">비회원 주문조회</a></li>
+                            </div>
+                        </div>
+</div></form>
+                </div>
+            </div>
+            <!--
+            <div class="SP_joinIntro_Bottom">
+            <div module="bannermanage2_display_17" class="login_bnr_zone">
+            <a href="{$href}" alt="{$title}" {$target} >{$banner}</a>
+            </div>            
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>

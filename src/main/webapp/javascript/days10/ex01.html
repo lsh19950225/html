@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     쿠키(cookie)
+     	ㄴ [js 쿠키]
+     	ㄴ jsp 쿠키
+     	
+     	? 클라이언트(브) 데이터 저장하는 텍스트 파일
+     	
+     	예) 로그인 페이지
+     		아이디
+     		비밀번호
+     		[로그인]
+     		->
+     		<-
+     		->
+     		<-
+     	
+     	새로운 요청이 있을 때 마다 이전 페이지의
+     	데이터를 새로운 페이지에서 유지 x
+     	클라이언트(브라우저) - 요청 -> 서버 <- 응답
+     									- 새요청 <- 응답
+     									- 새요청 <- 응답
+     									- 새요청 <- 응답
+     									:
+     									<- ex01.html ->
+     	submit 전송버튼
+     	
+     	쿠키 : 인증처리, 장바구니
+     	세션
+     	DB
+     	
+     	쿠키 = 	이름 = 값 : 한 쌍으로 저장
+     	브라우저 설정에서 쿠키 사용여부를 설정할 수 있다.
+     	
+     	* 쿠키 선언 형식 / 여기서 _ : 공백
+	    쿠키이름=쿠키값;(필수)_만료시점=날짜;_경로=경로값;_도메인=도메인명;_보안처리옵션
+	    X=Y;_expires=날짜;_path=경로값;_domain=localhost;_security
+	    만료시점이 생략되면 만료시점의 기본 값은 브라우저가 닫히면 쿠키는 자동으로 삭제된다.
+  </xmp>
+</div>
+</body>
+</html>

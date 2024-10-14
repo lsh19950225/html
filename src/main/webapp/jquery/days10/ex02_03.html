@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     
+  </xmp>
+  
+  <div>
+  	<p>Lorem ipsum dolor.</p>
+  	<p>Soluta deleniti culpa.</p>
+  </div>
+  <br />
+  <div>
+  	<p>Lorem ipsum dolor.</p>
+  </div>
+  <br />
+  <div>
+  	<span>Lorem ipsum dolor.</span>
+  	<p>Soluta deleniti culpa.</p>
+  </div>
+  
+  <script>
+  	/* 밑과 동일한 코딩
+  	$("document").ready(function(){
+  		
+  	});
+  	*/
+  	
+  	$(function(){
+  		$("div").css("border", "1px solid gray");
+  		
+  		// $("p:first").css("background-color", "red");
+  		// $("p:first-child").css("background-color", "red");
+  		
+  		// 자식이 1개가 있어야 하는 데
+  		// 그 자식요소가 p 태그인
+  		// $("p:only-child").css("background-color", "red");
+  		
+  		// 자식이 여러 개 라도 상관 없는데
+  		// 그 자식 요소 중에 p 태그는 1개 여야 된다.
+  		$("p:only-of-type").css("background-color", "red");
+  	});
+  </script>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css">
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+
+<style>
+	#box{
+		width: 100px;
+		height: 100px;
+		position: absolute; /* 절대좌표, 상대좌표, 고정 */
+		background-color: aqua;
+	}
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">lsh</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     animate() - "대기열 기능" 사용
+     대기열 ? Queue 차례대로 FIFO
+     	1) animate() 오른쪽 100px / 일이 완전히 끝나면
+     	2) animate() 아랫쪽 100px
+     	3) animate() 왼쪽 100px
+     	
+     	서로 다른 애니메이션을 순서대로 처리
+  </xmp>
+  
+    <input type="radio"  name="direction"  value="+" checked="checked"/>+
+	<input type="radio"  name="direction"  value="-"/>-
+	<br>
+	
+	<button>Run</button>
+	
+	<div id="box">Box</div>
+    
+    <script>
+    	$("button").on("click",function(){
+    		/*
+	    	$("#box")
+	    		.animate({height:"300px", opacity:"0.4"}, "slow")
+		    	.animate({width:"300px", opacity:"0.8"}, "slow")
+		    	.animate({height:"100px", opacity:"0.4"}, "slow")
+		    	.animate({width:"100px", opacity:"0.8"}, "slow")
+		    	.animate({fontSize:"3em"});
+    		*/
+    		
+    		let direction = $(":radio:checked").val(); // + -
+    		
+    		$("#box").animate({
+    			left:`${direction}=50px`
+    		});
+    	});
+    </script>
+    
+</div>
+</body>
+</html>
