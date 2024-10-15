@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="shortcut icon" type="image/x-icon" href="http://localhost/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet" href="http://localhost/webPro/resources/cdn-main/example.css"> -->
+<script src="http://localhost/webPro/resources/cdn-main/example.js"></script>
+<style>
+ span.material-symbols-outlined{
+    vertical-align: text-bottom;
+ }
+</style>
+</head>
+<body>
+
+<h1>Welcome to My Homepage</h1>
+
+<p>This is a paragraph.</p>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in a div.</p>
+  <p>Another paragraph in a div.</p>
+</div>
+
+<br>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+
+<br>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p  class="info">Another paragraph in another div.</p>
+</div>
+
+<script>
+	$("div")
+		.css("background-color","yellow")
+		.first()
+			.css("color","red")
+		.end() // 다시 위로 올라간다. 여기서는 div 로
+		.last()
+			.css("color","blue")
+			.children("p")
+				// .filter(".info")
+				.not(".info")
+					.css("font-size","3em");
+</script>
+
+</body>
+</html>
